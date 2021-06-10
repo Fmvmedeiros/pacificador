@@ -1,3 +1,6 @@
+/**
+ * Setup:
+ */
 // Testar se passou tempo
 function TestaSom () {
     if (input.runningTime() > Tempo1 + 60000) {
@@ -46,14 +49,12 @@ input.onButtonPressed(Button.B, function () {
     State = 0
     Contador = 0
 })
-/**
- * Setup:
- */
 let SomIn = 0
 let Tempo1 = 0
 let Contador = 0
 let State = 0
 let Treshold = 0
+radio.setGroup(7)
 let ContaLEDS = 0
 Treshold = 129
 State = 0
@@ -81,6 +82,7 @@ basic.forever(function () {
             if (input.runningTime() > Tempo1 + 60000) {
                 Contador = 0
             } else {
+                radio.sendNumber(1)
                 basic.showIcon(IconNames.EigthNote)
                 basic.pause(3000)
                 Contador = 0
