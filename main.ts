@@ -88,15 +88,12 @@ basic.forever(function () {
                 Contador = 0
             }
         }
-    } else if (SomIn > Treshold - 50 && SomIn < Treshold) {
-        led.plotBarGraph(
-        Math.map(SomIn, Treshold - 50, Treshold, 0, 50),
-        50
-        )
     } else {
         if (State == 0) {
-            basic.clearScreen()
-            led.plot(2, Math.map(SomIn, 0, Treshold - 50, 4, 0))
+            led.plotBarGraph(
+            Math.map(SomIn, 0, Treshold, 0, 100),
+            100
+            )
         }
     }
 })
